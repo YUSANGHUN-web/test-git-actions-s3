@@ -1,0 +1,99 @@
+$rowHeight: 40px;
+
+.draggable-box {
+  .thead-box {
+    display: flex;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    .col-item  {
+      font-weight: bold;
+      &.col-dropzon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+      &.col-field {
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 60px);
+      }
+    }
+  }
+  .tbody-box {
+    .draggable-row {
+      position: relative;
+      border-bottom: 1px solid gray;
+      display: flex;
+
+      .col-item {
+        text-align: center;
+        &.col-dropzon {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          cursor: pointer;
+  
+          .dropzon-top {
+            width: 100%;
+            height: 4px;
+            // background-color: lightpink;
+          }
+          .dropzon-icon {
+            display: flex;
+          }
+          .dropzon-bottom {
+            width: 100%;
+            height: 4px;
+            // background-color: lightgreen;
+          }
+        }
+        &.col-field {
+          width: calc(100% - 60px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 8px;
+        }
+      }
+
+      // 이벤트
+      &.effect-grabbing {
+        opacity: 0.3;
+      }
+      &.effect-top {
+        &::before {
+          content: '';
+          position: absolute;
+          top: -1 * ($rowHeight + 10px);
+          width: 100%;
+          height: $rowHeight;
+          border: 1px dotted black;
+        }
+        margin-top: $rowHeight + 20px;
+        .dropzon-top {
+          // background-color: black !important;
+        }
+      }
+      &.effect-bottom {
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -1 * ($rowHeight + 10px);
+          width: 100%;
+          height: $rowHeight;
+          border: 1px dotted black;
+        }
+        margin-bottom: $rowHeight + 20px;
+        .dropzon-bottom {
+          // background-color: black !important;
+        }
+      }
+    }
+  }
+}
+

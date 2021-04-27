@@ -1,0 +1,257 @@
+.h2-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.detail-section {
+  padding: 20px;
+  // background-color: #f7f7fa;
+  // border: 1px solid lightgray;
+  background-color: white;
+  border: 0px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 13px 0px rgb(82 63 105 / 5%);
+}
+
+// table 공통 스타일
+.table {
+  border-collapse: collapse;
+  tbody {
+    tr:hover {
+      background-color: rgba(99, 81, 190, 0.1);
+    }
+  }
+  th {
+    // background-color: rgba(99, 81, 190, 0.1);
+  }
+  th, td {
+    text-align: center;
+    vertical-align: middle !important;
+    // border: 1px solid rgba(99, 81, 190, 0.2);
+    padding: 8px !important; // 기본 heigh 값을 줄이기 위해
+  }
+
+  // 예외
+  &.song-modal {
+    tbody tr {
+      cursor: pointer;
+    }
+  }
+}
+
+.pagination-box {
+  display: flex;
+  justify-content: center;
+  .pagination {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    .pagination-button {
+      display: flex;
+      justify-content: center;
+      width: 30px;
+    }
+    .pagination-item {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 28px;
+      min-height: 28px;
+      font-size: 14px;
+      margin: 0 10px;
+      padding: 4px 6px;    
+      &.active {
+        background-color: black;
+        border-radius: 14px;
+        color: white;
+        font-weight: 600;      
+      }
+    }
+  }
+}
+
+/**
+ * 검색 화면
+ */
+.search-box {
+  background-color: white;
+  padding: 20px;
+  border: 0px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 13px 0px rgb(82 63 105 / 5%);
+  .search-form {
+    display: flex;
+    flex-wrap: wrap;
+  
+    .item {
+      display: flex;
+      width: 100%;
+  
+      .item-title {
+        display: flex;
+        align-items: center;
+        // justify-content: flex-end;
+        justify-content: center;
+  
+        width: 15%;
+        font-weight: bold;
+        text-align: center;
+        padding: 12px 8px;
+        background-color: #F7FAFC;
+        border-left: 3px solid lightgray;
+        margin-top:  2px;
+      }
+      .item-field {
+        display: flex;
+        align-items: center;
+        width: 85%;
+        padding: 0 20px 0 20px;
+        .field {
+          width: 100%;
+        }
+      }
+    }
+  
+    /*
+     * 페이지 예외
+     */
+    // 회원관리
+    &.template-member {
+      .item {
+        &:nth-child(n+1):nth-child(-n+2) { // 1~2번째만 해당
+          width: 50%;
+          .item-title {
+            width: 30%;
+          }
+          .item-field {
+            width: 70%;
+          }
+        }
+        .keyId-kAraokeActivatedProductId {
+          width: 500px;
+        }
+      }
+    }
+    // 프로모코드 관리
+    &.template-promotion {
+      .item {
+        width: 50%;
+        .item-title {
+          width: 30%;
+        }
+        .item-field {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+.search-result {
+  margin-top: 40px;
+  background-color: white;
+  padding: 20px;
+  border: 0px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 13px 0px rgb(82 63 105 / 5%);
+}
+/**
+ * 상세회면
+ */
+.detail-form {
+  display: flex;
+  // flex-direction: column;
+  flex-wrap: wrap;
+  .item {
+    display: flex;
+    width: 100%;
+    // border: 1px solid lightgray;
+    // border-bottom: 1px solid lightgray;
+
+    .item-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 15%;
+      font-weight: bold;
+      text-align: center;
+      background-color: #F7FAFC;
+      border-left: 3px solid lightgray;
+      margin-top:  2px;
+    }
+    .item-field {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 85%;
+      padding: 8px 20px;
+      .field {
+        width: 100%;
+      }
+      // TODO
+      .field:not(:nth-child(1)) {
+        margin-left: 10px;
+      }
+    }
+    // 예외
+    &.item-field-editor {
+      .item-field {
+        flex-direction: column;
+        justify-content: space-between;
+        // height: 280px;
+        .ql-container {
+          height: auto !important;
+          min-height: 150px;
+        }
+      }
+    }
+  }
+
+  /*
+   * 페이지 예외
+   */
+  // 곡정보 관리 상세
+  &.template-songInfo {
+    .item:nth-child(n+1):nth-child(-n+2), .item:nth-child(n+4):nth-child(-n+11) { // 1~2, 4~11 번째만 해당
+      width: 50%;
+      .item-title {
+        width: 30%;
+      }
+      .item-field {
+        width: 70%;
+      }
+    }
+  }
+  &.template-vocabulary {
+    .item:nth-child(n+1):nth-child(-n+2) { // 1~2 번째만 해당
+      width: 50%;
+      .item-title {
+        width: 30%;
+      }
+      .item-field {
+        width: 70%;
+      }
+    }
+  }
+}
+
+.dimmed-box {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+
+  .text-box {
+    border: 4px;
+    padding: 10px;
+    background-color: white;
+  }
+}

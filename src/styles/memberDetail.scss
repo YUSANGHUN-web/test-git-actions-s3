@@ -1,0 +1,68 @@
+.member-form {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: white;
+  border: 0px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 13px 0px rgb(82 63 105 / 5%);
+
+  .item {
+    display: flex;
+    width: 50%;
+
+    .item-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 30%;
+      font-weight: bold;
+      text-align: center;
+      padding: 12px 8px;
+      background-color: #F7FAFC;
+      border-left: 3px solid lightgray;
+      margin-top:  2px;
+    }
+    .item-field {
+      display: flex;
+      align-items: center;
+      width: 70%;
+      padding: 0 0 0 20px;
+      .field {
+        width: 100%;
+      }
+    }
+  }
+ }
+
+.member-tabs {
+  display: flex;
+  margin-top: 40px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  .tab {
+    width: 200px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(99, 81, 190, 0.1);
+    }
+    &.focus {
+      border-bottom: 2px solid rgba(99, 81, 190, 1);
+      background-color: rgba(99, 81, 190, 0.2);
+    }
+  }
+ }
+
+.empty-auto-payment {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 0px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 13px 0px rgb(82 63 105 / 5%);
+}

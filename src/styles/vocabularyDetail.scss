@@ -1,0 +1,26 @@
+ .word-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  .word {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #6b51df;
+    background-color: #F7FAFC;
+    border-radius: 4px;
+    .text {
+      padding: 4px;
+    }
+    .delete {
+      margin-left: 10px;
+      margin-right: 4px;
+      cursor: pointer;
+      &.readonly {
+        cursor: inherit;
+        color: lightgray;
+      }
+    }
+    margin: 4px;
+  }
+}

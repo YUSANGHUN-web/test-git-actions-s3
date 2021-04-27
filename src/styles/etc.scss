@@ -1,0 +1,58 @@
+.table-loading {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-empty-data {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-error-data {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+.text-disclaimer {
+  width: 100%;
+  margin-top: 0.25rem;
+  color: gray;
+}
+.text-error {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+.text-required {
+  color: #6b51df;
+}
+
+.artist-box {
+  margin-left: 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  height: 150px;
+  .artist {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .category {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .album-box {
+    display: flex;
+    .album:not(:first) {
+      margin-left: 10px;
+    }
+  }
+}
