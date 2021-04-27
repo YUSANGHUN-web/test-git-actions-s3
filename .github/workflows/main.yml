@@ -47,6 +47,8 @@ jobs:
 
       - name: build
         run: npm run build
+        env:
+          REACT_APP_API_HOST: 192.123.111.11
 
       # Runs a set of commands using the runners shell
       - name: deploy
